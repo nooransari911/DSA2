@@ -41,7 +41,7 @@
 #define ELEMENT_SIZE_LARGE (4 * STACK_SIZE)
 #define ELEMENT_SIZE_BASIC (2 * STACK_SIZE)
 #define INPUT_DATA "Enter appointment date: "
-#define OUTPUT_DATA_SUCCES "Latest appointment date is: "
+#define OUTPUT_DATA_SUCCESS "Latest appointment date is: "
 #define OUTPUT_DATA_FAILURE "No dates have been added;"
 
 
@@ -99,3 +99,5 @@ int * input_int (char * s1) {
 
     return buffer;
 }
+
+

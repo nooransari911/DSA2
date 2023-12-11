@@ -7,4 +7,8 @@ include_directories(.)
 
 add_executable(Trees_and_Graphs
         test0.c
-        DBMS_dates.h)
+        stack_queue_ADT.h
+        elle0.h
+        elle1.h
+        stack_elle.h
+)
