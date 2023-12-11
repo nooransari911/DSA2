@@ -18,16 +18,16 @@ int main () {
 
 
 
-    struct stack * te0;
-    te0 = init_stack ();
+    struct stack * s1;
+    s1 = init_stack ();
 
 
-    //void * user_input = (void *) input_string ("name");
-    void * user_input = "hellhell hellhellasdfasdf";
-    insert_in_stack(te0, user_input);
+    void * user_input = (void *) input_string (INPUT_DATA);
+    //void * user_input = "hellhell hellhellasdfasdf";
+    insert_in_stack(s1, user_input);
 
 
-    printf ("\ninserted string : %s\n", (access_stack(te0)));
+    print_stack_latest (s1, OUTPUT_DATA_SUCCES, OUTPUT_DATA_FAILURE);
 
 
 }

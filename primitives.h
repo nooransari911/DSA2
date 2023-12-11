@@ -40,6 +40,9 @@
 #define STACK_SIZE 10
 #define ELEMENT_SIZE_LARGE (4 * STACK_SIZE)
 #define ELEMENT_SIZE_BASIC (2 * STACK_SIZE)
+#define INPUT_DATA "Enter appointment date: "
+#define OUTPUT_DATA_SUCCES "Latest appointment date is: "
+#define OUTPUT_DATA_FAILURE "No dates have been added;"
 
 
 
@@ -80,7 +83,7 @@ char * input_string (char * s1) {
     char * buffer = (char *) malloc (20);
     memset (buffer, 0, ELEMENT_SIZE_BASIC);
 
-    printf ("\nEnter %s:\n", s1);
+    printf ("\n%s\n", s1);
     scanf (" %19[^\n]", buffer);
 
     return buffer;
@@ -91,7 +94,7 @@ int * input_int (char * s1) {
     int * buffer = (int *) malloc (4);
     memset (buffer, 0, 4);
 
-    printf ("\nEnter %s:\n", s1);
+    printf ("\n%s\n", s1);
     scanf (" %19[^\n]", buffer);
 
     return buffer;

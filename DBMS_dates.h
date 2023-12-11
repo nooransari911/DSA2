@@ -23,6 +23,9 @@ stack * init_stack ();
 void insert_in_stack (struct stack * s1, void * s);
 void * access_stack (struct stack * s1);
 void * access_queue (struct stack * s1);
+void print_stack (struct stack * s1, char * s2, char * s3);
+void print_stack_latest (struct stack * s1, char * s2, char * s3);
+
 
 
 
@@ -88,34 +91,33 @@ void * access_queue (struct stack * s1) {
 
 
 
-/*
-void print_stack (struct stack * dates) {
+void print_stack (struct stack * s1, char * s2, char * s3) {
     int i = 0;
 
-    printf ("\nAppointment dates are: \n");
+    printf ("\n%s\n", s2);
 
-    if (dates -> lastin == -1) {
-        printf ("No dates have been added");
+    if (s1 -> lastin == -1) {
+        printf ("\n%s\n", s3);
     }
 
 
     else {
-        while (i <= dates->lastin) {
-            printf("%s\n", &(dates->a[i][10]));
+        while (i <= s1->lastin) {
+            printf("%s\n", (char *) (s1 -> a[i]));
             i++;
         }
     }
 }
 
 
-void print_stack_latest (struct stack * dates) {
-    if (dates -> lastin == -1) {
-        printf ("No dates have been added");
+void print_stack_latest (struct stack * s1, char * s2, char * s3) {
 
+    if (s1 -> lastin == -1) {
+        printf ("\n%s\n", s3);
     }
 
     else {
-        printf("\nLatest date is: %s\n", &(dates->a[dates->lastin][10]));
+        printf("\n%s%s\n", s2, (char *) (s1 -> a[s1->lastin]));
     }
 }
 
@@ -124,4 +126,3 @@ void delete_stack (struct stack * dates) {
     dates -> lastin --;
 }
 
-*/
