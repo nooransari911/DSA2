@@ -110,6 +110,7 @@ void * access_stack_random (struct stack_ADT * s1, int i) {
 
 
 
+
 void print_stack (struct stack_ADT * s1, char * s2, char * s3) {
     int i = 0;
 

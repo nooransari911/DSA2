@@ -101,3 +101,9 @@ int * input_int (char * s1) {
 }
 
 
+
+
+void stderror (char * s1) {
+    printf ("\nError;\n");
+    printf ("%s\n\n", s1);
+}

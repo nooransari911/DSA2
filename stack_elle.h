@@ -23,6 +23,29 @@ typedef struct stack_elle {
 
 
 
+struct stack_elle * init_stack_elle ();
+void insert_in_stack_elle (struct stack_elle *
+        s1, struct elle* s);
+void insert_in_stack_random_elle (struct
+stack_elle * s1, struct elle * s, int i);
+void insert_master (struct stack_elle * qu,
+        struct stack_elle * in, struct elle * a);
+void * access_stack_elle (struct stack_elle * s1);
+void * access_queue_elle (struct stack_elle * s1);
+void * access_stack_random_elle (struct
+stack_elle * s1, int i);
+void printall (struct stack_elle * in);
+int searchinlinear (struct stack_elle * in, int
+        key);
+void reset_tree (struct stack_elle * in);
+
+
+
+
+
+
+
+
 struct stack_elle * init_stack_elle () {
     int i = 0;
     struct stack_elle * te0 = (struct stack_elle *) malloc (sizeof (struct stack_elle));
@@ -77,12 +100,20 @@ void * access_stack_elle (struct stack_elle * s1) {
     memset (s3, 0, sizeof (struct elle));
 
 
-    memcpy (s3, s2, sizeof (struct elle));
-    memset (s2, 0, sizeof (struct elle));
-    s1 -> lastin --;
-    s1 -> size --;
-    s3 -> mark ++;
-    return s3;
+    if ((s1 -> lastin) > -1) {
+        memcpy(s3, s2, sizeof(struct elle));
+        memset(s2, 0, sizeof(struct elle));
+        s1->lastin--;
+        s1->size--;
+        s3->mark++;
+        return s3;
+    }
+
+    else {
+        stderror ("Empty stack;");
+        printf ("Bad access;");
+        return (void *) ("911");
+    }
 }
 
 
@@ -94,12 +125,20 @@ void * access_queue_elle (struct stack_elle * s1) {
     memset (s3, 0, sizeof (struct elle));
 
 
-    memcpy (s3, s2, sizeof (struct elle));
-    memset (s2, 0, sizeof (struct elle));
-    s1 -> firstin ++;
-    s1 -> size --;
-    s3 -> mark ++;
-    return s3;
+    if ((s1 -> lastin) > -1) {
+        memcpy(s3, s2, sizeof(struct elle));
+        memset(s2, 0, sizeof(struct elle));
+        s1->firstin++;
+        s1->size--;
+        s3->mark++;
+        return s3;
+    }
+
+    else {
+        stderror ("Empty stack;");
+        printf ("Bad access;");
+        return (void *) ("911");
+    }
 }
 
 
@@ -115,8 +154,15 @@ void printall (struct stack_elle * in) {
 
     printf ("\n");
 
-    for (i = 0; i <= in -> lastin; i++) {
-        printf("%d\t", (in -> arr[i] -> data));
+    if ((in -> lastin) > -1) {
+        for (i = (in->lastin); i >= 0; i--) {
+            printf("%d\t", (in->arr[i]->data));
+        }
+    }
+
+    else {
+        stderror ("Empty stack;");
+        printf ("Bad access;");
     }
 }
 
@@ -126,8 +172,23 @@ void printall (struct stack_elle * in) {
 int searchinlinear (struct stack_elle * in, int key) {
     int i = 0;
 
-    while (in -> arr [i] -> data != key) {
-        i ++;
+    if ((in -> lastin) > -1) {
+        while (i <= (in -> lastin)) {
+            if (in -> arr [i] -> data == key) {
+                break;
+            }
+
+            i++;
+        }
+    }
+
+    else {
+        stderror ("Empty stack;");
+        printf ("Bad access;");
+    }
+
+    if (i > (in -> lastin)) {
+        printf ("\n%d not found;", key);
     }
 
     return i;

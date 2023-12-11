@@ -30,6 +30,20 @@ typedef struct tree {
 } tree;
 
 
+struct elle * init_elle (int data);
+struct tree * init_tree ();
+void update_BF (struct elle * parent, int r);
+void make_child (struct elle * parent, struct
+        elle * child, int r);
+void insert_as (struct elle * parent, int r,
+        int a);
+int whichchild (struct elle * root, struct elle
+        * child);
+struct tree * generate_tree();
+
+
+
+
 
 
 
@@ -81,15 +95,15 @@ void update_BF (struct elle * parent, int r) {
 
 void make_child (struct elle * parent, struct elle * child, int r) {
     if (r > 1) {
-
+        stderror("Invalid Link;");
     }
 
     else {
         parent -> link [r] = child;
         child -> link [2] = parent;
+        update_BF (parent, r);
     }
 
-    update_BF (parent, r);
 }
 
 
@@ -100,7 +114,7 @@ void insert_as (struct elle * parent, int r, int a) {
 
 
     if (r > 1) {
-
+        stderror("Invalid Link;");
     }
 
     else {
@@ -129,6 +143,7 @@ int whichchild (struct elle * root, struct elle * child) {
 
     return i;
 }
+
 
 
 
