@@ -6,67 +6,89 @@
 #define TREES_AND_GRAPHS_DBMS_DATES_H
 
 #endif //TREES_AND_GRAPHS_DBMS_DATES_H
-#include "malloc.h"
-#include "stdio.h"
-#include "stdbool.h"
-#include "string.h"
-#include "stdlib.h"
-#include "time.h"
-
-
-
-
-
-/*
- *
-    struct timespec initial0, final0;
-    struct timespec initial1, final1;
-
-    timespec_get (&initial1, TIME_UTC);
-    clock_gettime (CLOCK_PROCESS_CPUTIME_ID, &initial0);
-
-
-    timespec_get(&final1, TIME_UTC);
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &final0);
-
-    print_time (&initial0, &final0, 0);
-    print_time (&initial1, &final1, 1);
- */
+#include "primitives.h"
 
 
 
 typedef struct stack {
-    char a [10] [10];
+    void * a [STACK_SIZE];
+    int firstin;
     int lastin;
 } stack;
 
 
-struct stack * init_stack () {
+
+
+stack * init_stack ();
+void insert_in_stack (struct stack * s1, void * s);
+void * access_stack (struct stack * s1);
+void * access_queue (struct stack * s1);
+
+
+
+
+
+stack * init_stack () {
     struct stack * te0;
+    int i = 0;
 
     te0 = (stack *) malloc (sizeof (struct stack));
+    while (i < STACK_SIZE) {
+        te0 -> a[i] = malloc (ELEMENT_SIZE_BASIC);
+        memset (te0 -> a [i], 0, ELEMENT_SIZE_BASIC);
+        i++;
+    }
     te0 -> lastin = -1;
+    te0 -> firstin = 0;
 
     return te0;
 }
 
 
-void insert_stack (struct stack * dates) {
+void insert_in_stack (struct stack * s1, void * s) {
     int te;
-    printf ("Appointment date: ");
 
-    dates -> lastin ++;
-    scanf (" %9[^\n]", &(dates -> a [(dates -> lastin)][10]));
+    s1 -> lastin ++;
 
-    /*
-    fgets (&(dates -> a [(dates -> lastin)][10]), 9, stdin);
-    te = strcspn (&(dates -> a [(dates -> lastin)][10]), "\n");
-    dates -> a [(dates -> lastin)] [te] = 0;
-    */
+    void * s2 = (s1 -> a [(s1 -> lastin)]);
+    memcpy (s2, s, (ELEMENT_SIZE_BASIC - 1));
 
 }
 
 
+void * access_stack (struct stack * s1) {
+    void * s2 = (s1 -> a [(s1 -> lastin)]);
+    void * s3;
+
+    s3 = malloc (ELEMENT_SIZE_BASIC);
+    memset (s3, 0, ELEMENT_SIZE_BASIC);
+
+
+    memcpy (s3, s2, ELEMENT_SIZE_BASIC);
+    memset (s2, 0, ELEMENT_SIZE_BASIC);
+    s1 -> lastin --;
+    return s3;
+}
+
+
+void * access_queue (struct stack * s1) {
+    void * s2 = (s1 -> a [(s1 -> firstin)]);
+    void * s3;
+
+    s3 = malloc (ELEMENT_SIZE_BASIC);
+    memset (s3, 0, ELEMENT_SIZE_BASIC);
+
+
+    memcpy (s3, s2, ELEMENT_SIZE_BASIC);
+    memset (s2, 0, ELEMENT_SIZE_BASIC);
+    s1 -> firstin ++;
+    return s3;
+}
+
+
+
+
+/*
 void print_stack (struct stack * dates) {
     int i = 0;
 
@@ -101,3 +123,5 @@ void print_stack_latest (struct stack * dates) {
 void delete_stack (struct stack * dates) {
     dates -> lastin --;
 }
+
+*/
