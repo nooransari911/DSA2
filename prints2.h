@@ -15,7 +15,7 @@
 void internalprintin (struct elle * root) {
     if (root != NULL) {
         internalprintin(root->link[0]);
-        printf("%d\t", root->data);
+        printf("%d\t", * ((int *) (root -> fields -> a [ID])));
         internalprintin(root->link[1]);
     }
 }
@@ -23,7 +23,7 @@ void internalprintin (struct elle * root) {
 
 void internalprintpre (struct elle * root) {
     if (root != NULL) {
-        printf("%d\t", root->data);
+        printf("%d\t", * ((int *) (root -> fields -> a [ID])));
         internalprintpre(root->link[0]);
         internalprintpre(root->link[1]);
     }
@@ -34,7 +34,7 @@ void internalprintpost (struct elle * root) {
     if (root != NULL) {
         internalprintpost(root->link[0]);
         internalprintpost(root->link[1]);
-        printf("%d\t", root->data);
+        printf("%d\t", * ((int *) (root -> fields -> a [ID])));
     }
 }
 

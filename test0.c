@@ -15,7 +15,7 @@ int main () {
     printf ("\nBase memory usage: %ld\n", baseline);
     */
 
-
+    test_BST0 ();
 
 
 

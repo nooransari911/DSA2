@@ -16,4 +16,5 @@ add_executable(Trees_and_Graphs
         test2.h
         traversals_recursive.h
         traversals_iterative.h
+        BST0.h
 )

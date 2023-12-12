@@ -41,6 +41,11 @@ void print_time (struct timespec * initial, struct timespec * final, int op) {
 }
 
 
+void pseudoinput (struct elle * one, int s1) {
+    int * id;
+    id = (int *) (one -> fields -> a [ID]);
+    * id = s1;
+}
 
 
 void inputone (struct elle * one) {

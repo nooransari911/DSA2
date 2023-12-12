@@ -72,22 +72,18 @@ void DFS_pre_iterative (struct tree* tree, struct stack_elle * qu, struct stack_
 
 
 
-struct elle * inorderpredecessor (struct tree * tree, struct elle * what) {
+struct elle * inorderpredecessor (struct stack_elle * in, struct elle * what) {
     // returns the predecessor in
     // DFS inorder traversal
     // of given elle;
     // returns NULL if this does not exist;
 
 
-    struct stack_elle * qu, * in;
     int i = 0;
 
-    qu = init_stack_elle();
-    in = init_stack_elle();
-
-    DFS_in (tree -> root, in);
 
     if (in -> arr [i] == what) {
+        stderror ("Inorder predecessor is minimum in BST;");
         return NULL;
     }
 
