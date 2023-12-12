@@ -11,6 +11,11 @@ BIN=bin/main
 SRCS=$(wildcard $(SRC)/*.c)
 OBJS=$(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
 
+EVERY_OBJ=$(OBJ)/%.o
+EVERY_SRC=$(SRC)/%.c
+
+
+
 
 all: $(BIN)
 
@@ -20,12 +25,16 @@ $(BIN): $(OBJ)
 $(OBJ)/%.o: $(SRC)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-init: $(OBJ)
-	$(CC) $(CFLAGS) $(OBJS) -o $@
+
+
+
+init: $(OBJS)
 
 $(OBJ)/%.o: $(SRC)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 
+
+
 clean:
-	$(RM) -r main *.o *.dSYM
+	$(RM) -rf $(OBJ)/* bin/*

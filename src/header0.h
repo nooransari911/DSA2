@@ -8,6 +8,8 @@
 #endif //TREES_AND_GRAPHS_HEADER0_H
 
 
+static int sign = 0;
+
 
 // Created by ansarimn on 12/11/23.
 //
@@ -48,7 +50,9 @@
 
 
 
-int sign = 0;
+
+
+
 
 
 /*
