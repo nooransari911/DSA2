@@ -14,4 +14,6 @@ add_executable(Trees_and_Graphs
         test1.h
         prints2.h
         test2.h
+        traversals_recursive.h
+        traversals_iterative.h
 )

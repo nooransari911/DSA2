@@ -8,6 +8,6 @@
 #endif //TREES_AND_GRAPHS_TEST2_H
 
 
-#include "test1.h"
+#include "traversals_iterative.h"
 
 

@@ -1,3 +1,7 @@
+echo "No. of lines in .h ::"
+awk 'END {print NR}' *.h
+echo "No. of lines in .c ::"
+awk 'END {print NR}' *.c
 ssh -T git@github.com
 git add .
 git remote set-url origin git@github.com:nooransari911/DSA2.git
