@@ -8,7 +8,7 @@
 #endif //TREES_AND_GRAPHS_TEST1_H
 
 
-#include "elle1.h"
+#include "prints.h"
 
 
 
@@ -43,7 +43,6 @@ void test_stack_ADT () {
     insert_in_stack (s1, user_input);
      */
 
-    i = 0;
 
     print_stack(s1, OUTPUT_DATA_SUCCESS, OUTPUT_DATA_FAILURE);
 }
@@ -69,13 +68,11 @@ void test_elle0 () {
 
 
 void test_stack_elle () {
-    struct stack_elle * s1, * s2;
+    struct stack_elle * s1;
 
     s1 = init_stack_elle ();
-    s2 = init_stack_elle ();
 
     struct elle * te0, * te1, * te2, * te3;
-    int r = 0;
     int x;
 
     te0 = init_elle (44);
@@ -94,10 +91,7 @@ void test_stack_elle () {
 
 
 
-    printf ("\npos of %d: %d:\n", 128, searchinlinear (s1, 128
-
-
-    ));
+    printf ("\npos of %d: %d:\n", 128, searchinlinear (s1, 128));
 
     x = ((struct elle *) (access_stack_elle (s1))) -> data;
     printf ("\n%d\n", x);
@@ -108,4 +102,26 @@ void test_stack_elle () {
     x = ((struct elle *) (access_stack_elle (s1))) -> data;
     printf ("\n%d\n", x);
 
+}
+
+
+void test_void () {
+    void * s1;
+    s1 = malloc (sizeof (* s1));
+
+    scanf (" %d[^\n]", (int *) s1);
+    printf ("%d", * (int *) s1);
+}
+
+
+void test_prints () {
+    struct elle * te0, * te1;
+
+    te0 = init_elle (sign);
+    te1 = init_elle (sign);
+
+    inputone (te0);
+    inputone (te1);
+    printone (te0);
+    printone (te1);
 }

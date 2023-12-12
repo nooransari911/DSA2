@@ -9,7 +9,7 @@ add_executable(Trees_and_Graphs
         test0.c
         stack_queue_ADT.h
         elle0.h
-        elle1.h
+        prints.h
         stack_elle.h
         test1.h
 )

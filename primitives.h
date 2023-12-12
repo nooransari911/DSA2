@@ -79,6 +79,20 @@ long get_memory_usage (long baseline) {
 }
 
 
+int convert (char* str) {
+    int i, id;
+    i = 0;
+    id = 0;
+
+    while (str[i] != '\0') {
+        id = id + str [i];
+        i++;
+    }
+
+    return id;
+}
+
+
 char * input_string (char * s1) {
     char * buffer = (char *) malloc (20);
     memset (buffer, 0, ELEMENT_SIZE_BASIC);

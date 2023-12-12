@@ -80,6 +80,7 @@ Print functions.
 
 Functions ::
 - Print PROCESS and WALL time;
+- Take input from user into one `elle`; 
 - Print one `elle`;
 
 
@@ -93,3 +94,4 @@ Functions to test following files ::
 - `stack_ADT`,
 - `elle0.h`,
 - `stack_elle.h`,
+- `prints.h`

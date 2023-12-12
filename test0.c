@@ -21,6 +21,8 @@ int main () {
     //test_stack_ADT();
     //test_elle0 ();
     //test_stack_elle ();
+    //test_void ();
+    test_prints ();
 
 
 
