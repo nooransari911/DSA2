@@ -49,12 +49,12 @@ cmake_ninja_workdir = /home/ansarimn/Downloads/DSA2/cmake-build-debug/
 
 build cmake_object_order_depends_target_Trees_and_Graphs: phony || CMakeFiles/Trees_and_Graphs.dir
 
-build CMakeFiles/Trees_and_Graphs.dir/test0.c.o: C_COMPILER__Trees_and_Graphs_unscanned_Debug /home/ansarimn/Downloads/DSA2/test0.c || cmake_object_order_depends_target_Trees_and_Graphs
-  DEP_FILE = CMakeFiles/Trees_and_Graphs.dir/test0.c.o.d
+build CMakeFiles/Trees_and_Graphs.dir/src/test0.c.o: C_COMPILER__Trees_and_Graphs_unscanned_Debug /home/ansarimn/Downloads/DSA2/src/test0.c || cmake_object_order_depends_target_Trees_and_Graphs
+  DEP_FILE = CMakeFiles/Trees_and_Graphs.dir/src/test0.c.o.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   INCLUDES = -I/home/ansarimn/Downloads/DSA2/.
   OBJECT_DIR = CMakeFiles/Trees_and_Graphs.dir
-  OBJECT_FILE_DIR = CMakeFiles/Trees_and_Graphs.dir
+  OBJECT_FILE_DIR = CMakeFiles/Trees_and_Graphs.dir/src
 
 
 # =============================================================================
@@ -64,7 +64,7 @@ build CMakeFiles/Trees_and_Graphs.dir/test0.c.o: C_COMPILER__Trees_and_Graphs_un
 #############################################
 # Link the executable Trees_and_Graphs
 
-build Trees_and_Graphs: C_EXECUTABLE_LINKER__Trees_and_Graphs_Debug CMakeFiles/Trees_and_Graphs.dir/test0.c.o
+build Trees_and_Graphs: C_EXECUTABLE_LINKER__Trees_and_Graphs_Debug CMakeFiles/Trees_and_Graphs.dir/src/test0.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/Trees_and_Graphs.dir
   POST_BUILD = :

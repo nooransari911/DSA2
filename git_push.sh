@@ -1,3 +1,6 @@
+#batch rename from *.foo -> *.bar
+#for f in *.foo; do mv -- "$f" "${f%.foo}.bar"; done
+
 echo "No. of lines in .h ::"
 awk 'END {print NR}' *.h
 echo "No. of lines in .c ::"

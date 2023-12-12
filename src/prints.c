@@ -8,18 +8,8 @@
 #endif //TREES_AND_GRAPHS_ELLE1_H
 
 
-#include "stack_elle.h"
+#include "header0.h"
 
-#define DATE 0
-#define ID 1
-#define BILL 2
-#define NAME 3
-#define SIGN 4
-
-
-
-
-int sign = 0;
 
 
 

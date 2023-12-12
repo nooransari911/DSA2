@@ -9,7 +9,7 @@
 
 
 
-#include "prints.h"
+#include "header0.h"
 
 
 void internalprintin (struct elle * root) {
@@ -41,19 +41,19 @@ void internalprintpost (struct elle * root) {
 
 
 
-void printin (struct tree * tree){
+void printin (struct tree * tree) {
     printf ("\n\nThe inorder traversal is:\n");
     internalprintin(tree->root);
 }
 
 
-void printpre (struct tree * tree){
+void printpre (struct tree * tree) {
     printf ("\n\nThe preorder traversal is:\n");
     internalprintpre(tree->root);
 }
 
 
-void printpost (struct tree * tree){
+void printpost (struct tree * tree) {
     printf ("\n\nThe postorder traversal is:\n");
     internalprintpost(tree->root);
 }

@@ -8,30 +8,7 @@
 #endif //TREES_AND_GRAPHS_DBMS_DATES_H
 
 
-#include "primitives.h"
-
-
-
-typedef struct stack_ADT {
-    void * a [STACK_SIZE];
-    int firstin;
-    int lastin;
-    int size;
-} stack_ADT;
-
-
-
-
-stack_ADT * init_stack ();
-void insert_in_stack (struct stack_ADT * s1, void * s);
-void insert_in_stack_random (struct stack_ADT * s1, void * s, int i);
-void * access_stack (struct stack_ADT * s1);
-void * access_queue (struct stack_ADT * s1);
-void * access_stack_random (struct stack_ADT * s1, int i);
-void print_stack (struct stack_ADT * s1, char * s2, char * s3);
-void print_stack_latest (struct stack_ADT * s1, char * s2, char * s3);
-void delete_stack_lastin (struct stack_ADT * s1);
-
+#include "header0.h"
 
 
 

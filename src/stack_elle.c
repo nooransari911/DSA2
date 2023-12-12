@@ -8,36 +8,8 @@
 #endif //TREES_AND_GRAPHS_STACK_ELLE_H
 
 
-#include "elle0.h"
+#include "header0.h"
 
-
-
-
-typedef struct stack_elle {
-    struct elle * arr [STACK_SIZE];
-    int firstin;
-    int lastin;
-    int size;
-} stack_elle;
-
-
-
-
-struct stack_elle * init_stack_elle ();
-void insert_in_stack_elle (struct stack_elle *
-        s1, struct elle* s);
-void insert_in_stack_random_elle (struct
-stack_elle * s1, struct elle * s, int i);
-void insert_master (struct stack_elle * qu,
-        struct stack_elle * in, struct elle * a);
-void * access_stack_elle (struct stack_elle * s1);
-void * access_queue_elle (struct stack_elle * s1);
-void * access_stack_random_elle (struct
-stack_elle * s1, int i);
-void printall (struct stack_elle * in);
-int searchinlinear (struct stack_elle * in, int
-        key);
-void reset_tree (struct stack_elle * in);
 
 
 

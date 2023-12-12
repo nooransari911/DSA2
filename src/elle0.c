@@ -8,40 +8,7 @@
 #endif //TREES_AND_GRAPHS_ELLE0_H
 
 
-#include "stack_queue_ADT.h"
-
-
-#define LINKS 4
-
-
-
-
-typedef struct elle {
-    struct stack_ADT * fields;
-    struct stack_ADT * dates;
-    int data, BF, mark;
-
-    struct elle * link [LINKS];
-} elle;
-
-
-typedef struct tree {
-    struct elle * root;
-} tree;
-
-
-struct elle * init_elle (int data);
-struct tree * init_tree ();
-void update_BF (struct elle * parent, int r);
-void make_child (struct elle * parent, struct
-        elle * child, int r);
-void insert_as (struct elle * parent, int r,
-        int a);
-int whichchild (struct elle * root, struct elle
-        * child);
-struct tree * generate_tree();
-
-
+#include "header0.h"
 
 
 

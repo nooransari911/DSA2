@@ -7,56 +7,15 @@
 
 #endif //TREES_AND_GRAPHS_BST0_H
 
-#include "traversals_iterative.h"
-
-
-#define BST_KEY 1
+#include "header0.h"
 
 
 
-/*
-struct elle * init_elle_general (int data) {
-    struct elle * te0 = (struct elle *) malloc (sizeof (struct elle));
-    int * te1 = (int *) (te0 -> fields -> a [BST_KEY]);
-    int i = 0;
-
-    * te1 = data;
-    te0 -> BF = 0;
-    te0 -> mark = 0;
-    te0 -> fields = init_stack ();
-    te0 -> dates = init_stack ();
-
-    while (i < LINKS) {
-        te0 -> link [i] = (struct elle*) malloc (sizeof (struct elle));
-        te0 -> link [i] = NULL;
-        i ++;
-    }
-
-    return te0;
-}
 
 
-void insert_as_general (struct elle * parent, int r, int a) {
-    struct elle *ptrnew;
-
-    ptrnew = init_elle (a);
 
 
-    if (r > 1) {
-        stderror("Invalid Link;");
-    }
-
-    else {
-        parent -> link [r] = ptrnew;
-        ptrnew -> link [2] = parent;
-    }
-
-    update_BF (parent, r);
-}
-*/
-
-
-struct elle * searchinBST (struct tree* tree, int key){
+struct elle * searchinBST (struct tree* tree, int key) {
     /*
      * Searches for a value in BST;
      *

@@ -8,7 +8,7 @@
 #endif //TREES_AND_GRAPHS_TEST2_H
 
 
-#include "BST0.h"
+#include "header0.h"
 
 
 void test_BST0 () {

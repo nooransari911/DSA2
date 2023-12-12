@@ -6,51 +6,14 @@
 #define DSA2_PRIMITIVES_H
 
 #endif //DSA2_PRIMITIVES_H
-#include "malloc.h"
-#include "stdio.h"
-#include "stdbool.h"
-#include "string.h"
-#include <stdlib.h>
-#include <time.h>
-#include <unistd.h>
-#include <sys/resource.h>
 
 
 
 
-/*
- *
-    struct timespec initial0, final0;
-    struct timespec initial1, final1;
-
-    timespec_get (&initial1, TIME_UTC);
-    clock_gettime (CLOCK_PROCESS_CPUTIME_ID, &initial0);
-
-
-    timespec_get(&final1, TIME_UTC);
-    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &final0);
-
-    print_time (&initial0, &final0, 0);
-    print_time (&initial1, &final1, 1);
- */
+#include "header0.h"
 
 
 
-
-#define STACK_SIZE 10
-#define ELEMENT_SIZE_LARGE (4 * STACK_SIZE)
-#define ELEMENT_SIZE_BASIC (2 * STACK_SIZE)
-#define INPUT_DATA "Enter appointment date: "
-#define OUTPUT_DATA_SUCCESS "Latest appointment date is: "
-#define OUTPUT_DATA_FAILURE "No dates have been added;"
-
-
-
-
-long mod (long a);
-long get_memory_usage (long baseline);
-char * input_string (char * s1);
-int * input_int (char * s1);
 
 
 
