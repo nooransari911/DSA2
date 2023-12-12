@@ -73,8 +73,8 @@ void insertinBST (struct tree * tree, int s1) {
     root = tree -> root;
     te0 = root;
 
+    ptrnew = init_elle (sign);
     //inputone (ptrnew);
-    ptrnew = init_elle (SIGN);
     pseudoinput (ptrnew, s1);
     key = (int *) (ptrnew -> fields -> a [BST_KEY]);
 

@@ -1,6 +1,6 @@
 # All files
 
-#### <`primitives.h`>
+#### <`primitives.c`>
 The most basic file. It has functions for ::
 - taking input from user as string;
 - taking input from user as int;
@@ -10,7 +10,7 @@ The most basic file. It has functions for ::
 
 
 
-#### <`stack_queue_ADT.h`>
+#### <`stack_queue_ADT.c`>
 This implements stack as ADT. `void *` of size 
 20 is one element in stack; there can be at 
 most 10 such elements in stack simultaneously.
@@ -29,7 +29,7 @@ Functions ::
 
 
 
-#### <`elle0.h`>
+#### <`elle0.c`>
 This implements elements in a dynamic 
 list/tree. Elements have 2 `stack_ADT`. These 
 can be used to store various data. `data` 
@@ -55,7 +55,7 @@ Functions ::
 
 
 
-#### <`stack_elle.h`>
+#### <`stack_elle.c`>
 Implements stack for `elle` elements.
 
 Functions ::
@@ -75,7 +75,7 @@ Functions ::
 
 
 
-#### <`prints.h`>
+#### <`prints.c`>
 Print functions.
 
 Functions ::
@@ -86,7 +86,7 @@ Functions ::
 
 
 
-#### <`prints2.h`>
+#### <`prints2.c`>
 Prints trees.
 
 Functions ::
@@ -98,7 +98,7 @@ Print trees in ::
 
 
 
-#### <`test1.h`>
+#### <`test1.c`>
 Functions to test functions in all files.
 
 Functions to test following files ::
@@ -112,10 +112,32 @@ Functions to test following files ::
 
 
 
-#### <`traversals_recursive.h`>
+#### <`traversals_recursive.c`>
+Recursive implementations of DFS preorder, postorder, inorder. Stores the result in provided `stack_elle`.
 
 
-#### <`traversals_iterative.h`>
 
 
-#### <`test2.h`>
+#### <`traversals_iterative.c`>
+Iterative implementations of BFS, DFS preorder. Stores the result in provided `stack_elle`.
+
+Functions ::
+- Iterative implementations of BFS, DFS,
+- Inorder predecessor of a given elle in a tree,
+
+
+
+
+#### <`BST0.c`>
+Functions for using BST.
+
+Functions ::
+- Search for a given value in BST,
+- Insert a given `elle` in BST,
+
+
+
+
+#### <`test2.c`>
+Tests following files ::
+- `BST0.c`,
