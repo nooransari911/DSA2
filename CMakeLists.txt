@@ -12,4 +12,6 @@ add_executable(Trees_and_Graphs
         prints.h
         stack_elle.h
         test1.h
+        prints2.h
+        test2.h
 )

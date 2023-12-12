@@ -8,7 +8,7 @@
 #endif //TREES_AND_GRAPHS_TEST1_H
 
 
-#include "prints.h"
+#include "prints2.h"
 
 
 
@@ -124,4 +124,12 @@ void test_prints () {
     inputone (te1);
     printone (te0);
     printone (te1);
+}
+
+
+
+void test_prints2 () {
+    struct tree * tree = generate_tree ();
+
+    printin (tree);
 }

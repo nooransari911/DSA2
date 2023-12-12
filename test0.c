@@ -3,7 +3,7 @@
 //
 
 
-#include "test1.h"
+#include "test2.h"
 
 
 int main () {
@@ -17,12 +17,7 @@ int main () {
 
 
 
-    //test_primitives();
-    //test_stack_ADT();
-    //test_elle0 ();
-    //test_stack_elle ();
-    //test_void ();
-    test_prints ();
+
 
 
 

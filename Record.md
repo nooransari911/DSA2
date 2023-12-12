@@ -75,13 +75,25 @@ Functions ::
 
 
 
-#### <`elle1.h`>
+#### <`prints.h`>
 Print functions.
 
 Functions ::
 - Print PROCESS and WALL time;
 - Take input from user into one `elle`; 
 - Print one `elle`;
+
+
+
+
+#### <`prints2.h`>
+Prints trees.
+
+Functions ::
+Print trees in ::
+- Postorder;
+- Preorder;
+- Inorder;
 
 
 
@@ -94,4 +106,10 @@ Functions to test following files ::
 - `stack_ADT`,
 - `elle0.h`,
 - `stack_elle.h`,
-- `prints.h`
+- `prints.h`,
+- `prints2.h`.
+
+
+
+
+#### <`test2.h`>

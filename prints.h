@@ -100,3 +100,7 @@ void printone (struct elle* one) {
 
     printf ("\n");
 }
+
+
+
+
