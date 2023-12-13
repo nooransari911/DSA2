@@ -46,7 +46,7 @@ struct tree * init_tree () {
 
 
 
-void update_BF (struct elle * parent, int r) {
+void update_BF_insert (struct elle * parent, int r) {
     if (r == 0) {
         parent -> BF ++;
     }
@@ -58,6 +58,26 @@ void update_BF (struct elle * parent, int r) {
 }
 
 
+void update_BF_delete (struct elle * parent, int r) {
+    if (r == 0) {
+        parent -> BF --;
+    }
+
+    else if (r == 1) {
+        parent -> BF ++;
+    }
+}
+
+
+void kill (struct elle * parent, int j) {
+    struct elle * alias0;
+    alias0 = parent -> link [j];
+
+    parent -> link [j] = NULL;
+
+    //free (alias0);
+}
+
 
 
 void make_child (struct elle * parent, struct elle * child, int r) {
@@ -68,7 +88,7 @@ void make_child (struct elle * parent, struct elle * child, int r) {
     else {
         parent -> link [r] = child;
         child -> link [2] = parent;
-        update_BF (parent, r);
+        update_BF_insert (parent, r);
     }
 
 }
@@ -89,7 +109,7 @@ void insert_as (struct elle * parent, int r, int a) {
         ptrnew -> link [2] = parent;
     }
 
-    update_BF (parent, r);
+    update_BF_insert (parent, r);
 }
 
 
@@ -101,13 +121,28 @@ int whichchild (struct elle * root, struct elle * child) {
     int i;
     i = 0;
 
-    while (i < 2) {
-        if (root->link[i] == child) {
-            break ;
-        }
-        i++;
+
+    if (root == NULL | child == NULL) {
+        printf ("\nSIGSEGV//\n");
     }
 
+    else {
+
+        while (i < 2) {
+            if (root -> link [i] == NULL) {
+
+            }
+
+            else {
+                if (root->link[i]->fields->a[BST_KEY] == child->fields->a[BST_KEY]) {
+                    return i;
+                }
+            }
+
+        i++;
+        }
+
+    }
     return i;
 }
 

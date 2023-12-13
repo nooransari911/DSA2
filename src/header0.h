@@ -135,7 +135,9 @@ void delete_stack_lastin (struct stack_ADT * s1);
 //elle0
 struct elle * init_elle (int data);
 struct tree * init_tree ();
-void update_BF (struct elle * parent, int r);
+void update_BF_insert (struct elle * parent, int r);
+void update_BF_delete (struct elle * parent, int r);
+void kill (struct elle * parent, int j);
 void make_child (struct elle * parent, struct
         elle * child, int r);
 void insert_as (struct elle * parent, int r,
@@ -209,7 +211,7 @@ void DFS_in (struct elle * root, struct stack_elle * in);
 void BFS_iterative (struct tree* tree, struct  stack_elle * qu, struct  stack_elle * in);
 void DFS_pre_iterative (struct tree* tree, struct stack_elle * qu, struct stack_elle* in);
 struct elle * inorderpredecessor (struct stack_elle * in, struct elle * what);
-
+void Traversal_any (struct tree * tree, struct stack_elle * qu, struct stack_elle * in, int a);
 
 
 
@@ -218,7 +220,7 @@ struct elle * inorderpredecessor (struct stack_elle * in, struct elle * what);
 //BST0
 struct elle * searchinBST (struct tree* tree, int key);
 void insertinBST (struct tree * tree, int s1);
-
+void deleteinBST (struct tree * tree, int key);
 
 
 //test2

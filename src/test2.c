@@ -12,13 +12,28 @@
 
 
 void test_BST0 () {
+    int i = 0;
     struct tree * tr = init_tree ();
 
-    insertinBST (tr, 0);
-    insertinBST (tr, 2);
-    insertinBST (tr, 1);
     insertinBST (tr, 3);
+    insertinBST (tr, 0);
+    insertinBST (tr, 1);
+    insertinBST (tr, 2);
 
     printin (tr);
     printpost (tr);
+
+
+    while (i < 4) {
+        printf ("\n\nIteration: %d", i);
+        printf ("\ninitial:");
+        printpost (tr);
+
+        deleteinBST (tr, i);
+        printf ("\nfinal:");
+        printpost (tr);
+        insertinBST (tr, i);
+        i ++;
+    }
+
 }

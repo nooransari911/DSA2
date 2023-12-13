@@ -94,3 +94,48 @@ struct elle * inorderpredecessor (struct stack_elle * in, struct elle * what) {
 
     return (in -> arr [i]);
 }
+
+
+
+
+void Traversal_any (struct tree * tree, struct stack_elle * qu, struct stack_elle * in, int a) {
+    // For easily accessing all traversal implementations;
+    // 0. BFS
+    // 1. DFS preorder, iterative
+    // 2. DFS preorder, recursive
+    // 3. DFS postorder, recursive
+    // 4. DFS inorder, recursive
+
+
+    qu = init_stack_elle ();
+    in = init_stack_elle ();
+
+    switch (a) {
+        case 0:
+            BFS_iterative (tree, qu, in);
+            printf ("\n\nThe BFS iterative traversal is:");
+            break;
+
+        case 1:
+            DFS_pre_iterative (tree, qu, in);
+            printf ("\n\nThe DFS preorder iterative traversal is:");
+            break;
+
+        case 2:
+            DFS_pre (tree -> root, in);
+            printf ("\n\nThe DFS preorder recursive traversal is:");
+            break;
+
+        case 3:
+            DFS_post (tree -> root, in);
+            printf ("\n\nThe DFS postorder recursive traversal is:");
+            break;
+
+        case 4:
+            DFS_in (tree -> root, in);
+            printf ("\n\nThe DFS inorder recursive traversal is:");
+            break;
+    }
+
+    printall (in);
+}

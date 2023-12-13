@@ -146,7 +146,7 @@ int searchinlinear (struct stack_elle * in, int key) {
 
     if ((in -> lastin) > -1) {
         while (i <= (in -> lastin)) {
-            if (in -> arr [i] -> data == key) {
+            if (* (int *) (in -> arr [i] -> fields -> a [BST_KEY]) == key) {
                 break;
             }
 
@@ -156,11 +156,11 @@ int searchinlinear (struct stack_elle * in, int key) {
 
     else {
         stderror ("Empty stack;");
-        printf ("Bad access;");
+        printf ("Bad access;\n");
     }
 
     if (i > (in -> lastin)) {
-        printf ("\n%d not found;", key);
+        printf ("%d not found;\n", key);
     }
 
     return i;

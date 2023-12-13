@@ -124,7 +124,7 @@ Iterative implementations of BFS, DFS preorder. Stores the result in provided `s
 Functions ::
 - Iterative implementations of BFS, DFS,
 - Inorder predecessor of a given elle in a tree,
-
+- Function to call any traversal function,
 
 
 
