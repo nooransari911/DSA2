@@ -134,6 +134,7 @@ Functions for using BST.
 Functions ::
 - Search for a given value in BST,
 - Insert a given `elle` in BST,
+- Delete a given `elle` in BST,
 
 
 
