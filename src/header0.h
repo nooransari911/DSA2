@@ -212,6 +212,7 @@ void BFS_iterative (struct tree* tree, struct  stack_elle * qu, struct  stack_el
 void DFS_pre_iterative (struct tree* tree, struct stack_elle * qu, struct stack_elle* in);
 struct elle * inorderpredecessor (struct stack_elle * in, struct elle * what);
 void Traversal_any (struct tree * tree, struct stack_elle * qu, struct stack_elle * in, int a);
+void kill_tree (struct tree * tr);
 
 
 

@@ -123,7 +123,7 @@ void insertinBST (struct tree * tree, int s1) {
 
 void deleteinBSTinternal (struct stack_elle * in, int i) {
 
-    int j = 0, flag0 = 0;
+    int j = 0;
     struct elle * parent, * current, * prev;
 
     current = in -> arr [i];
@@ -142,6 +142,8 @@ void deleteinBSTinternal (struct stack_elle * in, int i) {
         //to be deleted is leaf;
         //simply kill this elle;
         parent = current -> link [2];
+        j = whichchild (parent, current);
+        kill(parent, j);
     }
 
 
@@ -156,36 +158,22 @@ void deleteinBSTinternal (struct stack_elle * in, int i) {
         current -> fields -> a [BST_KEY] = prev -> fields -> a [BST_KEY];
         current = prev;
         parent = current -> link [2];
-
-    }
-
-
-    else {
-        //to be deleted has one child;
-        parent = current -> link [2];
-        flag0 = 1;
-    }
-
-
-    printf ("\n");
-    j = whichchild (parent, current);
-
-
-    if (flag0 == 0){
+        j = whichchild (parent, current);
         kill(parent, j);
     }
 
-    else {
-        //parent now skips to be deleted;
-
-        if (current -> link [0] != NULL) {
-            parent -> link [j] = current -> link [0];
-        }
-
-        else {
-            parent -> link [j] = current -> link [1];
-        }
+    else if (current -> link [0] != NULL) {
+        parent = current -> link [2];
+        j = whichchild (parent, current);
+        parent -> link [j] = current -> link [0];
     }
+
+    else if (current -> link [1] != NULL){
+        parent = current -> link [2];
+        j = whichchild (parent, current);
+        parent -> link [j] = current -> link [1];
+    }
+
 
     update_BF_delete (parent, j);
 }
@@ -196,7 +184,7 @@ void deleteinBSTinternal (struct stack_elle * in, int i) {
 void deleteinBST (struct tree * tree, int key) {
     struct stack_elle * in;
     struct elle* root = tree -> root;
-    int i, flag0 = 0;
+    int i;
 
     in = init_stack_elle();
 
@@ -213,6 +201,7 @@ void deleteinBST (struct tree * tree, int key) {
             //Both child of root are NULL;
             root = NULL;
             tree -> root = NULL;
+            //free (root);
         }
 
         else if (root->link[0] == NULL
@@ -221,7 +210,8 @@ void deleteinBST (struct tree * tree, int key) {
             //[1] right child of root is not NULL;
             tree->root = tree->root->link[1];
             kill (root->link[1], 2);
-            kill (root, 1);
+            //kill (root, 1);
+            //free (root);
         }
 
         else if (root->link[0] != NULL
@@ -230,7 +220,8 @@ void deleteinBST (struct tree * tree, int key) {
             //[0] left child of root is not NULL;
             tree->root = tree->root->link[0];
             kill (root->link[0], 2);
-            kill (root, 0);
+            //kill (root, 0);
+            //free (root);
         }
 
         else {

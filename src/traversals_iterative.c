@@ -139,3 +139,19 @@ void Traversal_any (struct tree * tree, struct stack_elle * qu, struct stack_ell
 
     printall (in);
 }
+
+void kill_tree (struct tree * tr) {
+    struct stack_elle * in, * qu;
+    in = init_stack_elle ();
+    qu = init_stack_elle ();
+
+    DFS_pre_iterative (tr, qu, in);
+
+
+    int i = 0;
+
+    while (i < in -> lastin) {
+        free (in -> arr [i]);
+        i ++;
+    }
+}

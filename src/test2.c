@@ -36,4 +36,6 @@ void test_BST0 () {
         i ++;
     }
 
+    //kill_tree (tr);
+
 }

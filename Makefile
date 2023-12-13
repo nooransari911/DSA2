@@ -1,6 +1,6 @@
 CC=gcc
 OPT=-O0
-CFLAGS=-g $(OPT)
+CFLAGS=-g
 INC=-I /home/ansarimn/Downloads/testing/
 
 
@@ -31,7 +31,31 @@ $(OBJ)/%.o: $(SRC)/%.c
 init: $(OBJS)
 
 $(OBJ)/%.o: $(SRC)/%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -O1 -c $< -o $@
+
+
+
+
+
+L1: bin/L1
+
+bin/L1: $(OBJ)
+	$(CC) $(CFLAGS) -O1 $(OBJS) -o $@
+
+$(OBJ)/%.o: $(SRC)/%.c
+	$(CC) $(CFLAGS) -O1 -c $< -o $@
+
+
+
+
+L2: bin/L2
+
+bin/L2: $(OBJ)
+	$(CC) $(CFLAGS) -O2 $(OBJS) -o $@
+
+$(OBJ)/%.o: $(SRC)/%.c
+	$(CC) $(CFLAGS) -O2 -c $< -o $@
+
 
 
 

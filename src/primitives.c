@@ -13,6 +13,48 @@
 #include "header0.h"
 
 
+/*
+ *
+    struct timespec initial0, final0;
+    struct timespec initial1, final1;
+
+    timespec_get (&initial1, TIME_UTC);
+    clock_gettime (CLOCK_PROCESS_CPUTIME_ID, &initial0);
+
+    <user function goes here;>
+
+    timespec_get(&final1, TIME_UTC);
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &final0);
+
+    print_time (&initial0, &final0, 0);
+    print_time (&initial1, &final1, 1);
+ */
+
+
+
+
+/*
+ *
+No frees ::
+==266322== HEAP SUMMARY:
+==266322==     in use at exit: 31,880 bytes in 1,109 blocks
+==266322==   total heap usage: 1,110 allocs, 1 frees, 32,904 bytes allocated
+==266322==
+==266322== LEAK SUMMARY:
+==266322==    definitely lost: 2,716 bytes in 30 blocks
+==266322==    indirectly lost: 29,164 bytes in 1,079 blocks
+
+With frees ::
+ ==268039== HEAP SUMMARY:
+==268039==     in use at exit: 31,688 bytes in 1,106 blocks
+==268039==   total heap usage: 1,110 allocs, 4 frees, 32,904 bytes allocated
+==268039==
+==268039== LEAK SUMMARY:
+==268039==    definitely lost: 2,716 bytes in 30 blocks
+==268039==    indirectly lost: 28,972 bytes in 1,076 blocks
+
+ */
+
 
 
 

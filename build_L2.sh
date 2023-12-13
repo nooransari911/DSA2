@@ -1,6 +1,10 @@
+#STD
 make clean
 make init
-make all
-./bin/main
+make L2
+clear
+./bin/L2
 echo ""
+
+
 #valgrind ./bin/main
