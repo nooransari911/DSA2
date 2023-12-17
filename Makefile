@@ -1,6 +1,6 @@
 CC=gcc
 OPT=-O0
-CFLAGS=-g
+CFLAGS=-g -march=native
 INC=-I /home/ansarimn/Downloads/testing/
 
 
