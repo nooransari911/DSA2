@@ -1,6 +1,6 @@
 CC=gcc
 OPT=-O0
-CFLAGS=-g -march=native
+CFLAGS=-g -march=native -I src
 INC=-I /home/ansarimn/Downloads/testing/
 
 
@@ -11,11 +11,13 @@ SRCtest=testing
 OBJtest=testing/obj
 SHIMsrc=testing
 SHIMobj=testing/obj
-
+DBMSsrc=DBMS/src
+DBMSobj=DBMS/obj
 
 BIN=bin/main
 BINtest=bin/test
 SHIMbin=bin/shim
+DBMSbin=bin/dbms
 
 
 # wildcard, patsubst for all *.o, *.c files
@@ -26,6 +28,8 @@ OBJStest=$(patsubst $(SRCtest)/%.c, $(OBJtest)/%.o, $(SRCStest))
 SHIMSsrc=$(wildcard $(SHIMsrc)/*.c)
 SHIMSobj=$(patsubst $(SHIMsrc)/%.c, $(SHIMobj)/%.o, $(SHIMSsrc))
 SHIMSHobj=$(patsubst $(SHIMsrc)/%.c, $(SHIMobj)/%.so, $(SHIMSsrc))
+DBMSSsrc=$(wildcard $(DBMSsrc)/*.c)
+DBMSSobj=$(patsubst $(DBMSsrc)/%.c, $(DBMSobj)/%.o, $(DBMSSsrc))
 
 
 EVERY_OBJ=$(OBJ)/%.o
@@ -61,6 +65,12 @@ $(SHIMobj)/%.so: $(SHIMsrc)/%.c
 	$(CC) $(CFLAGS) -O2 -fPIC -shared -o $@ $^ -ldl
 
 
+init_dbms: $(DBMSSobj)
+
+$(DBMSobj)/%.o: $(DBMSsrc)/%.c
+	$(CC) $(CFLAGS) -O2 -c $< -o $@
+
+
 
 
 # Main targets;
@@ -82,6 +92,12 @@ shim: $(SHIMbin)
 
 $(SHIMbin): $(SHIMobj)
 	$(CC) $(CFLAGS) $(SHIMSobj) -o $@
+
+
+dbms: $(DBMSbin)
+
+$(DBMSbin): $(DBMSobj)
+	$(CC) $(CFLAGS) $(DBMSSobj) -o $@
 
 
 
@@ -109,4 +125,4 @@ bin/L2: $(OBJ)
 
 # clean everything in obj, bin, /testing/obj;
 clean:
-	$(RM) -rf $(OBJ)/* bin/* $(OBJtest)/*
+	$(RM) -rf bin/* $(OBJ)/* $(OBJtest)/* $(DBMSobj)/*.o
