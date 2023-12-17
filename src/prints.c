@@ -48,6 +48,7 @@ void inputone (struct elle * one) {
      */
 
     //char name[10];
+    /*
     int * bill, * id, * sign2;
     char * name;
 
@@ -67,6 +68,24 @@ void inputone (struct elle * one) {
     * id = convert (name);
     * sign2 = sign;
     sign ++ ;
+    */
+
+    char * name, * email;
+    int bill, i;
+
+
+    name = input_string ("Patient name:");
+    bill = input_int ("Bill:");
+
+
+    one -> fields -> a [NAME] = (void *) name;
+    * (int *) one -> fields -> a [BILL] = bill;
+    * (int *) one -> fields -> a [SIGN] = sign;
+
+    // converts name string into int;
+    * (int *) one -> fields -> a [ID] = convert (name);
+
+    sign ++;
 }
 
 

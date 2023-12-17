@@ -2,7 +2,7 @@
 make clean
 make init
 make L2
-clear
+#clear
 ./bin/L2
 echo ""
 

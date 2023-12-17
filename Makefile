@@ -22,7 +22,9 @@ DBMSbin=bin/dbms
 
 # wildcard, patsubst for all *.o, *.c files
 SRCS=$(wildcard $(SRC)/*.c)
+SRCSdbms=$(filter-out $(SRC)/test0.c, $(SRCS))
 OBJS=$(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS))
+OBJSdbms=$(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCSdbms))
 SRCStest=$(wildcard $(SRCtest)/*.c)
 OBJStest=$(patsubst $(SRCtest)/%.c, $(OBJtest)/%.o, $(SRCStest))
 SHIMSsrc=$(wildcard $(SHIMsrc)/*.c)
@@ -65,9 +67,12 @@ $(SHIMobj)/%.so: $(SHIMsrc)/%.c
 	$(CC) $(CFLAGS) -O2 -fPIC -shared -o $@ $^ -ldl
 
 
-init_dbms: $(DBMSSobj)
+init_dbms: $(DBMSSobj) $(OBJSdbms)
 
 $(DBMSobj)/%.o: $(DBMSsrc)/%.c
+	$(CC) $(CFLAGS) -O2 -c $< -o $@
+
+$(OBJdbms)/%.o: $(SRCdbms)/%.c
 	$(CC) $(CFLAGS) -O2 -c $< -o $@
 
 
@@ -97,7 +102,7 @@ $(SHIMbin): $(SHIMobj)
 dbms: $(DBMSbin)
 
 $(DBMSbin): $(DBMSobj)
-	$(CC) $(CFLAGS) $(DBMSSobj) -o $@
+	$(CC) $(CFLAGS) $(DBMSSobj) $(OBJSdbms) -o $@
 
 
 

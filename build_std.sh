@@ -2,6 +2,6 @@
 make clean
 make init
 make all
-clear
+#clear
 ./bin/main
 echo ""

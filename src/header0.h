@@ -2,6 +2,8 @@
 // Created by ansarimn on 12/12/23.
 //
 
+#pragma once
+
 #ifndef TREES_AND_GRAPHS_HEADER0_H
 #define TREES_AND_GRAPHS_HEADER0_H
 
@@ -111,7 +113,7 @@ long mod (long a);
 long get_memory_usage (long baseline);
 int convert (char* str);
 char * input_string (char * s1);
-int * input_int (char * s1);
+int input_int (char * s1);
 void stderror (char * s1);
 
 
@@ -220,6 +222,7 @@ void kill_tree (struct tree * tr);
 
 //BST0
 struct elle * searchinBST (struct tree* tree, int key);
+void insertinBSTin (struct tree * tr, struct elle * ptrnew);
 void insertinBST (struct tree * tree, int s1);
 void deleteinBST (struct tree * tree, int key);
 

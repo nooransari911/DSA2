@@ -14,4 +14,9 @@
 
 
 
-int convert (char * str);
+void test0 ();
+void test1 ();
+struct elle* inputelle ();
+void DBMSinsert (struct tree* tr);
+void DBMSsearch (struct tree * tr);
+void DBMSdel (struct tree * tr);

@@ -109,14 +109,15 @@ char * input_string (char * s1) {
 }
 
 
-int * input_int (char * s1) {
-    int * buffer = (int *) malloc (4);
-    memset (buffer, 0, 4);
+int input_int (char * s1) {
+    //int * buffer = (int *) malloc (4);
+    //memset (buffer, 0, 4);
 
+    int i;
     printf ("\n%s\n", s1);
-    scanf (" %19[^\n]", buffer);
+    scanf (" %d", &i);
 
-    return buffer;
+    return i;
 }
 
 

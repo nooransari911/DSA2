@@ -49,33 +49,23 @@ struct elle * searchinBST (struct tree* tree, int key) {
 
 
 
-void insertinBST (struct tree * tree, int s1) {
-    /* Inserts a value into BST;
-     *
+void insertinBSTin (struct tree * tr, struct elle * ptrnew) {
+    /* WARNING !!!!
+     * Make sure ptrnew, tr is not NULL;
      */
 
 
     int * int1, * key;
     struct elle * root, * te0;
-    struct elle * ptrnew;
 
-    if (tree -> root == NULL) {
-        ptrnew = init_elle (SIGN);
-        pseudoinput (ptrnew, s1);
-        tree -> root = ptrnew;
-        return;
-    }
 
-    else {
-
-    }
-
-    root = tree -> root;
+    root = tr -> root;
     te0 = root;
 
-    ptrnew = init_elle (sign);
+    //ptrnew = init_elle (sign);
+    //pseudoinput (ptrnew, s1);
     //inputone (ptrnew);
-    pseudoinput (ptrnew, s1);
+    //ptrnew = inputelle ();
     key = (int *) (ptrnew -> fields -> a [BST_KEY]);
 
 
@@ -116,8 +106,38 @@ void insertinBST (struct tree * tree, int s1) {
         ptrnew -> link [2] = te0;
         update_BF_insert (te0, 1);
     }
+}
 
-    return;
+
+
+
+void insertinBST (struct tree * tree, int s1) {
+    /* Inserts a value into BST;
+     *
+     */
+
+
+    int * int1, * key;
+    struct elle * root, * te0;
+    struct elle * ptrnew;
+
+
+    ptrnew = init_elle (SIGN);
+    pseudoinput (ptrnew, s1);
+
+    if (tree -> root == NULL) {
+        //inputone (ptrnew);
+        tree -> root = ptrnew;
+        return;
+    }
+
+    else {
+
+    }
+
+
+    insertinBSTin (tree, ptrnew);
+
 }
 
 

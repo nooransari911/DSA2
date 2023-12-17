@@ -2,5 +2,10 @@
 
 
 int main () {
-    printf ("%d", convert ("aaaa"));
+    printf ("%d\n", convert ("asdf"));
+    printf ("%d", convert ("zxcv"));
+
+
+    //test0 ();
+    test1 ();
 }
