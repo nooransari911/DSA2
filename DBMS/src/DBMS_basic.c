@@ -2,12 +2,13 @@
 
 
 struct elle* inputelle () {
-    /*
-     * Takes input from user
-     */
 
-    char * name, * email;
-    int bill, i;
+    /*
+    Takes input from user
+    */
+
+    char * name;
+    int bill;
     struct elle* te0;
 
 
@@ -31,6 +32,8 @@ struct elle* inputelle () {
 
 
 
+
+
 void test0 () {
     struct elle * te0, * te1;
 
@@ -50,10 +53,17 @@ void test1 () {
 
     DBMSinsert (tr);
     DBMSinsert (tr);
-    printin (tr);
+    DBMSprintall (tr);
 
-    DBMSsearch (tr);
+    //DBMSsearch (tr);
+    //DBMSdelete (tr);
 
-    DBMSdel (tr);
-    printin (tr);
+    printf ("\n%s%s\n", "Inserting dates into ", "asdf");
+    DBMSinsertdate (tr);
+    DBMSlatestdate (tr);
+    printf ("\n%s%s\n", "Inserting dates into ", "zxcv");
+    DBMSinsertdate (tr);
+    DBMSlatestdate (tr);
+    printf ("\n%s\n", "All entries added:");
+    DBMSprintall (tr);
 }

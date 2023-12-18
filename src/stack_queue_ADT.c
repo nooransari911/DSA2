@@ -119,6 +119,18 @@ void print_stack_latest (struct stack_ADT * s1, char * s2, char * s3) {
 }
 
 
+void print_stack_latest_int (struct stack_ADT * s1, char * s2, char * s3) {
+
+    if (s1 -> lastin == -1) {
+        printf ("\n%s\n", s3);
+    }
+
+    else {
+        printf("\n%s%d\n", s2, * (int *) (s1 -> a [s1->lastin]));
+    }
+}
+
+
 void delete_stack_lastin (struct stack_ADT * s1) {
     s1 -> lastin --;
     s1 -> size --;

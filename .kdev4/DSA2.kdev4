@@ -1,5 +1,12 @@
 [Buildset]
 BuildItems=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x01\x00\x00\x00\x0b\x00\x00\x00\x00\x01\x00\x00\x00\x08\x00D\x00S\x00A\x002)
 
+[ClangTidy]
+UseConfigFile=false
+
+[MakeBuilder]
+Number Of Jobs=16
+Override Number Of Jobs=true
+
 [Project]
 VersionControlSupport=kdevgit

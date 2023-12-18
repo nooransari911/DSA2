@@ -40,7 +40,8 @@ static int sign = 0;
 #define ELEMENT_SIZE_BASIC (2 * STACK_SIZE)
 #define INPUT_DATA "Enter appointment date: "
 #define OUTPUT_DATA_SUCCESS "Latest appointment date is: "
-#define OUTPUT_DATA_FAILURE "No dates have been added;"
+#define OUTPUT_DATA_FAILURE "No dates exist;"
+#define DOES_NOT_EXIST "Does not exist;"
 #define LINKS 4
 #define DATE 0
 #define ID 1
@@ -115,6 +116,8 @@ int convert (char* str);
 char * input_string (char * s1);
 int input_int (char * s1);
 void stderror (char * s1);
+char * psrand_str ();
+int psrand_int ();
 
 
 
@@ -128,6 +131,7 @@ void * access_queue (struct stack_ADT * s1);
 void * access_stack_random (struct stack_ADT * s1, int i);
 void print_stack (struct stack_ADT * s1, char * s2, char * s3);
 void print_stack_latest (struct stack_ADT * s1, char * s2, char * s3);
+void print_stack_latest_int (struct stack_ADT * s1, char * s2, char * s3);
 void delete_stack_lastin (struct stack_ADT * s1);
 
 
@@ -154,10 +158,8 @@ struct tree * generate_tree();
 //stack_elle
 
 struct stack_elle * init_stack_elle ();
-void insert_in_stack_elle (struct stack_elle *
-s1, struct elle* s);
-void insert_in_stack_random_elle (struct
-                                          stack_elle * s1, struct elle * s, int i);
+void insert_in_stack_elle (struct stack_elle * s1, struct elle* s);
+void insert_in_stack_random_elle (struct stack_elle * s1, struct elle * s, int i);
 void insert_master (struct stack_elle * qu,
                     struct stack_elle * in, struct elle * a);
 void * access_stack_elle (struct stack_elle * s1);
@@ -181,6 +183,9 @@ void printone (struct elle* one);
 
 
 //prints2
+void internalprintin (struct elle * root);
+void internalprintpre (struct elle * root);
+void internalprintpost (struct elle * root);
 void printin (struct tree * tree);
 void printpre (struct tree * tree);
 void printpost (struct tree * tree);
@@ -222,6 +227,7 @@ void kill_tree (struct tree * tr);
 
 //BST0
 struct elle * searchinBST (struct tree* tree, int key);
+struct elle * searchinputBST (struct tree * tr);
 void insertinBSTin (struct tree * tr, struct elle * ptrnew);
 void insertinBST (struct tree * tree, int s1);
 void deleteinBST (struct tree * tree, int key);

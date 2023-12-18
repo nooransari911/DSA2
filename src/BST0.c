@@ -16,6 +16,9 @@
 
 
 struct elle * searchinBST (struct tree* tree, int key) {
+    /* WARNING !!!!
+     * Make sure ptrnew, tr is not NULL;
+     */
     /*
      * Searches for a value in BST;
      *
@@ -43,7 +46,22 @@ struct elle * searchinBST (struct tree* tree, int key) {
 
 
     // Value not found, so returns NULL;
+    printf ("\n%s\n", DOES_NOT_EXIST);
     return NULL;
+}
+
+
+struct elle * searchinputBST (struct tree * tr) {
+    struct elle* te0;
+    int i = 0;
+    char * s1;
+
+    s1 = input_string ("Enter name:");
+    i = convert (s1);
+    te0 = searchinBST (tr, i);
+
+
+    return te0;
 }
 
 

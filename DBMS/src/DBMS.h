@@ -19,4 +19,12 @@ void test1 ();
 struct elle* inputelle ();
 void DBMSinsert (struct tree* tr);
 void DBMSsearch (struct tree * tr);
-void DBMSdel (struct tree * tr);
+void DBMSdelete (struct tree * tr);
+void DBMSprintall (struct tree* tr);
+
+
+
+
+void DBMSlatestdate (struct tree * tr);
+void DBMSinsertdate (struct tree * tr);
+void DBMSdeletedate (struct tree * tr);

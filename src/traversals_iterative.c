@@ -44,6 +44,7 @@ void DFS_pre_iterative (struct tree* tree, struct stack_elle * qu, struct stack_
     flag0 = 0;
 
     te0 = tree -> root;
+
     insert_master (qu, in, te0);
 
 
@@ -59,7 +60,9 @@ void DFS_pre_iterative (struct tree* tree, struct stack_elle * qu, struct stack_
         }
 
         if (flag0 == 0) {
-            insert_in_stack_elle (qu, te0 -> link [2]);
+            if (te0 -> link [2] != NULL) {
+                insert_in_stack_elle (qu, te0 -> link [2]);
+            }
         }
 
         flag0 = 0;

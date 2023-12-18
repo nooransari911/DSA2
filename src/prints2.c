@@ -15,7 +15,8 @@
 void internalprintin (struct elle * root) {
     if (root != NULL) {
         internalprintin(root->link[0]);
-        printf("%d\t", * ((int *) (root -> fields -> a [ID])));
+        //printf("%d\t", * ((int *) (root -> fields -> a [BST_KEY])));
+        printone (root);
         internalprintin(root->link[1]);
     }
 }
@@ -23,7 +24,8 @@ void internalprintin (struct elle * root) {
 
 void internalprintpre (struct elle * root) {
     if (root != NULL) {
-        printf("%d\t", * ((int *) (root -> fields -> a [ID])));
+        //printf("%d\t", * ((int *) (root -> fields -> a [BST_KEY])));
+        printone (root);
         internalprintpre(root->link[0]);
         internalprintpre(root->link[1]);
     }
@@ -34,7 +36,8 @@ void internalprintpost (struct elle * root) {
     if (root != NULL) {
         internalprintpost(root->link[0]);
         internalprintpost(root->link[1]);
-        printf("%d\t", * ((int *) (root -> fields -> a [ID])));
+        //printf("%d\t", * ((int *) (root -> fields -> a [BST_KEY])));
+        printone (root);
     }
 }
 
@@ -43,7 +46,7 @@ void internalprintpost (struct elle * root) {
 
 void printin (struct tree * tree) {
     printf ("\n\nThe inorder traversal is:\n");
-    internalprintin(tree->root);
+    internalprintin (tree->root);
 }
 
 

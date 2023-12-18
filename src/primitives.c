@@ -127,3 +127,29 @@ void stderror (char * s1) {
     printf ("\nError;\n");
     printf ("%s\n\n", s1);
 }
+
+
+char * psrand_str () {
+    if (sign == 0) {
+        return "asdf";
+    }
+
+    else if (sign == 1) {
+        return "zxcv";
+    }
+
+    return "end";
+}
+
+
+int psrand_int () {
+    if (sign == 0) {
+        return 1111;
+    }
+
+    else if (sign == 1) {
+        return 2222;
+    }
+
+    return 911;
+}
