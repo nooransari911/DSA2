@@ -52,34 +52,18 @@ void DBMSmenu () {
                 break;
 
             case 6:
-                printf ("Search medical history: ");
-                scanf (" %9[^\n]", name);
-                i = convert (name);
-
                 DBMSsearch (tree);
                 break;
 
             case 7:
-                printf ("Insert dates; enter name: ");
-                scanf (" %9[^\n]", name);
-                i = convert (name);
-
                 DBMSinsertdate (tree);
                 break;
 
             case 8:
-                printf ("Delete dates; enter name: ");
-                scanf (" %9[^\n]", name);
-                i = convert (name);
-
                 DBMSdeletedate (tree);
                 break;
 
             case 9:
-                printf ("Get latest date; enter name: ");
-                scanf (" %9[^\n]", name);
-                i = convert (name);
-
                 DBMSlatestdate (tree);
                 break;
         }

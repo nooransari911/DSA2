@@ -8,4 +8,5 @@ int main () {
 
     //test0 ();
     //test1 ();
+    DBMSmenu ();
 }
