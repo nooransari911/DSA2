@@ -58,8 +58,6 @@ void * access_stack_safe (struct stack_ADT * s1) {
 
 
     memcpy (s3, s2, ELEMENT_SIZE_BASIC);
-    memset (s2, 0, ELEMENT_SIZE_BASIC);
-
 
     return s3;
 }
