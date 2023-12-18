@@ -74,13 +74,16 @@ void DBMSdeletedate (struct tree * tr) {
 
 
     while (true) {
-        printf("\nDo you want to delete date: %s?\n", (char *) (access_stack (te0 -> dates)));
-
+        //printf("\nDo you want to delete date: %s?\n", (char *) (access_stack_safe (te0 -> dates)));
+        printf("Lastin: %d?\n", (te0 -> dates -> lastin));
         printf("Enter 1 to delete latest date, enter 0 to cancel ");
         scanf("%d", &i);
 
         if (i == 1) {
-            delete_stack_lastin (te0 -> dates);
+            //delete_stack_lastin (te0 -> dates);
+            //te0 -> dates -> lastin --;
+            //te0 -> dates -> size --;
+            access_stack (te0 -> dates);
         }
 
         else if (i == 0) {

@@ -22,15 +22,15 @@ void DBMSmenu () {
         printf("\n\n1. Start operation\n");
         printf("2. Exit\n");
         printf("3. Add new record\n");
-        printf("4. Delete by name\n");
+        printf("4. Delete by name\n\n");
         printf("5. Print all records\n");
         printf("6. Search by medical history\n");
         printf("7. Add appointment date\n");
         printf("8. Delete latest appointment date\n");
-        printf("9. Get latest appointment date\n");
+        printf("9. Get latest appointment date\n\n");
 
 
-        scanf("%d[^\n]", &op);
+        scanf(" %d[^\n]", &op);
 
         switch (op) {
             case 1:

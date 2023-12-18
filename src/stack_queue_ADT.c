@@ -49,6 +49,22 @@ void insert_in_stack_random (struct stack_ADT * s1, void * s, int i) {
 }
 
 
+void * access_stack_safe (struct stack_ADT * s1) {
+    void * s2 = (s1 -> a [(s1 -> lastin)]);
+    void * s3;
+
+    s3 = malloc (ELEMENT_SIZE_BASIC);
+    memset (s3, 0, ELEMENT_SIZE_BASIC);
+
+
+    memcpy (s3, s2, ELEMENT_SIZE_BASIC);
+    memset (s2, 0, ELEMENT_SIZE_BASIC);
+
+
+    return s3;
+}
+
+
 void * access_stack (struct stack_ADT * s1) {
     void * s2 = (s1 -> a [(s1 -> lastin)]);
     void * s3;

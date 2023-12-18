@@ -126,6 +126,7 @@ int psrand_int ();
 stack_ADT * init_stack ();
 void insert_in_stack (struct stack_ADT * s1, void * s);
 void insert_in_stack_random (struct stack_ADT * s1, void * s, int i);
+void * access_stack_safe (struct stack_ADT * s1);
 void * access_stack (struct stack_ADT * s1);
 void * access_queue (struct stack_ADT * s1);
 void * access_stack_random (struct stack_ADT * s1, int i);
