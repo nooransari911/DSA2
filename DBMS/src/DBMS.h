@@ -28,3 +28,8 @@ void DBMSprintall (struct tree* tr);
 void DBMSlatestdate (struct tree * tr);
 void DBMSinsertdate (struct tree * tr);
 void DBMSdeletedate (struct tree * tr);
+
+
+
+
+void DBMSmenu ();
