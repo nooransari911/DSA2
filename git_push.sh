@@ -7,6 +7,14 @@ awk 'END {print NR}' *.h
 echo "No. of lines in .c ::"
 awk 'END {print NR}' *.c
 echo ""
+#echo "No. of lines in Makefile"
+#awk 'END {print NR}' Makefile
+#echo ""
+#echo "No. of lines in md"
+#awk 'END {print NR}' *.md
+#echo ""
+
+
 cd ..
 ssh -T git@github.com
 git add .
